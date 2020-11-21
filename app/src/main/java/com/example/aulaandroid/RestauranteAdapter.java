@@ -1,10 +1,13 @@
 package com.example.aulaandroid;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,10 +50,23 @@ public class RestauranteAdapter extends
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Restaurante restaurante = restaurantes.get(position);
+        String nomeRestaurante = restaurante.getNome();
+        int notaRestaurante = restaurante.getNota();
         TextView nameView = holder.restauranteName;
-        nameView.setText(restaurante.getNome());
+        nameView.setText(nomeRestaurante);
         TextView notaView = holder.restauranteNota;
-        notaView.setText(String.valueOf(restaurante.getNota()));
+        notaView.setText(String.valueOf(notaRestaurante));
+        nameView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Activity activity = (Activity) v.getContext();
+                Intent intent = new Intent(activity, EditActivity.class);
+                intent.putExtra("nomeDoRestaurante", nomeRestaurante);
+                intent.putExtra("notaDoRestaurante", notaRestaurante);
+                intent.putExtra("idDoRestaurante", position);
+                activity.startActivityForResult(intent, MainActivity.EDIT_RESTAURANTE );
+            }
+        });
     }
 
     @Override

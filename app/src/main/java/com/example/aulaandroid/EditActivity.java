@@ -32,11 +32,11 @@ public class EditActivity extends AppCompatActivity {
     private void setupData() {
         Intent intent = getIntent();
         idDoRestaurante = intent.getIntExtra("idDoRestaurante",-1);
-        if(idDoRestaurante > 0){
+        if(idDoRestaurante >= 0){
             nomeDoRestaurante = intent.getStringExtra("nomeDoRestaurante");
             notaDoRestaurante = intent.getIntExtra("notaDoRestaurante", 0);
             campoNome.setText(nomeDoRestaurante);
-            campoNota.setText(notaDoRestaurante);
+            campoNota.setText(String.valueOf(notaDoRestaurante));
         }
     }
 
