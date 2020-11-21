@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Aula Android</string>
+    <string name="ola_mundo">Olá, Mundo!</string>
+    <string name="trocar_mensagem">Trocar Mensagem</string>
+</resources>
