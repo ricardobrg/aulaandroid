@@ -1,15 +1,20 @@
 package com.example.aulaandroid.modelo;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurante {
     private final String nome;
     private int nota;
+    private boolean favorito;
+    private String imageUriString;
 
-    public Restaurante(String nome, int nota){
+    public Restaurante(String nome, int nota, boolean favorito, String imageUri){
         this.nome = nome;
         this.nota = nota;
+        this.favorito = favorito;
+        this.imageUriString = imageUriString;
     }
 
     public int getNota() {
@@ -24,11 +29,11 @@ public class Restaurante {
         this.nota = nota;
     }
 
-    public static ArrayList<Restaurante> createRestaurateList(int qtde){
-        ArrayList<Restaurante> restaurantes = new ArrayList<Restaurante>();
-        for (int i = 0; i < qtde; i++){
-            restaurantes.add(new Restaurante("Restaurante " + i, i));
-        }
-        return restaurantes;
-    }
+    public boolean isFavorito() { return this.favorito; }
+
+    public void setFavorito(boolean favorito) { this.favorito = favorito; }
+
+    public String getImageUriString() { return imageUriString; }
+
+    public void setImageUriString(String imageUri) { this.imageUriString = imageUri;}
 }

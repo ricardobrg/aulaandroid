@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.aulaandroid.modelo.Restaurante;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 
@@ -72,22 +74,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        String nomeDoRestaurante;
+        String nomeDoRestaurante, imageUriString;
         int notaDoRestaurante;
         Restaurante restaurante;
+        boolean restauranteFavorito;
         if(resultCode == RESULT_OK){
+            nomeDoRestaurante = data.getStringExtra("nomeDoRestaurante");
+            notaDoRestaurante = data.getIntExtra("notaDoRestaurante", 0);
+            restauranteFavorito = data.getBooleanExtra("restauranteFavorito", false);
+            imageUriString = data.getStringExtra("imageUriString");
+            restaurante = new Restaurante(
+                    nomeDoRestaurante,
+                    notaDoRestaurante,
+                    restauranteFavorito,
+                    imageUriString
+            );
             switch(requestCode) {
                 case NEW_RESTAURANTE:
-                    nomeDoRestaurante = data.getStringExtra("nomeDoRestaurante");
-                    notaDoRestaurante = data.getIntExtra("notaDoRestaurante", 0);
-                    restaurante = new Restaurante(nomeDoRestaurante, notaDoRestaurante);
                     restaurantes.add(restaurante);
                     break;
                 case EDIT_RESTAURANTE:
                     int id = data.getIntExtra("idDoRestaurante", 0);
-                    nomeDoRestaurante = data.getStringExtra("nomeDoRestaurante");
-                    notaDoRestaurante = data.getIntExtra("notaDoRestaurante", 0);
-                    restaurante = new Restaurante(nomeDoRestaurante, notaDoRestaurante);
                     restaurantes.set(id, restaurante);
                     break;
             }

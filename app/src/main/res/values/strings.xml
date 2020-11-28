@@ -2,4 +2,6 @@
     <string name="app_name">Aula Android</string>
     <string name="ola_mundo">Olá, Mundo!</string>
     <string name="trocar_mensagem">Trocar Mensagem</string>
+    <string name="nome_do_restaurante">Nome do Restaurante</string>
+    <string name="nota">nota</string>
 </resources>

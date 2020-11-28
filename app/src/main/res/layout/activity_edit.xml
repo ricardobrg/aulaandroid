@@ -6,25 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".EditActivity">
 
-    <EditText
-        android:id="@+id/editNome"
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nome do Restaurante"
-        android:inputType="textPersonName"
+        android:layout_height="128dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
+    <EditText
+        android:id="@+id/editNome"
+        android:layout_width="206dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="16sp"
+        android:ems="10"
+        android:hint="Nome do Restaurante"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 
     <EditText
         android:id="@+id/editNota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_width="225dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16sp"
         android:ems="10"
         android:hint="Nota"
         android:inputType="number"
@@ -33,14 +42,24 @@
         app:layout_constraintTop_toBottomOf="@+id/editNome" />
 
     <Button
+        android:id="@+id/fav_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:text="Favorito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNota" />
+
+    <Button
         android:id="@+id/saveMensagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16sp"
         android:text="Salvar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNota" />
+        app:layout_constraintTop_toBottomOf="@+id/fav_button" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

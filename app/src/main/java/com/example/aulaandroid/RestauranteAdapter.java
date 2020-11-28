@@ -51,6 +51,8 @@ public class RestauranteAdapter extends
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Restaurante restaurante = restaurantes.get(position);
         String nomeRestaurante = restaurante.getNome();
+        boolean restauranteFavorito = restaurante.isFavorito();
+        String imageUriString = restaurante.getImageUriString();
         int notaRestaurante = restaurante.getNota();
         TextView nameView = holder.restauranteName;
         nameView.setText(nomeRestaurante);
@@ -64,6 +66,8 @@ public class RestauranteAdapter extends
                 intent.putExtra("nomeDoRestaurante", nomeRestaurante);
                 intent.putExtra("notaDoRestaurante", notaRestaurante);
                 intent.putExtra("idDoRestaurante", position);
+                intent.putExtra("restauranteFavorito", restauranteFavorito);
+                intent.putExtra("imageUriString", imageUriString);
                 activity.startActivityForResult(intent, MainActivity.EDIT_RESTAURANTE );
             }
         });
