@@ -54,7 +54,7 @@ public class FavActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
+        inflater.inflate(R.menu.fav_menu, menu);
         return true;
     }
 
@@ -63,9 +63,6 @@ public class FavActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menu_buscar:
                 Toast.makeText(this, "Buscar", Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.menu_fav:
-                Toast.makeText(this, "Favoritos", Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
