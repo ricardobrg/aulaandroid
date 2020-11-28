@@ -10,7 +10,7 @@ public class Restaurante {
     private boolean favorito;
     private String imageUriString;
 
-    public Restaurante(String nome, int nota, boolean favorito, String imageUri){
+    public Restaurante(String nome, int nota, boolean favorito, String imageUriString){
         this.nome = nome;
         this.nota = nota;
         this.favorito = favorito;

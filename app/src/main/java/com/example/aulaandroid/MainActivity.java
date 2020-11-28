@@ -32,7 +32,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Restaurante> restaurantes = new ArrayList<Restaurante>();
+    public ArrayList<Restaurante> restaurantes = new ArrayList<Restaurante>();
     RestauranteAdapter adapter;
     public static final int NEW_RESTAURANTE = 123;
     public static final int EDIT_RESTAURANTE = 124;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupRestauranteList() {
         RecyclerView recyclerViewRestaurantes = findViewById(R.id.rv_restaurantes);
-        adapter = new RestauranteAdapter(restaurantes);
+        adapter = new RestauranteAdapter(restaurantes, false);
         recyclerViewRestaurantes.setAdapter(adapter);
         recyclerViewRestaurantes.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recyclerViewRestaurantes.setLayoutManager(new LinearLayoutManager(this));
@@ -83,12 +83,14 @@ public class MainActivity extends AppCompatActivity {
             notaDoRestaurante = data.getIntExtra("notaDoRestaurante", 0);
             restauranteFavorito = data.getBooleanExtra("restauranteFavorito", false);
             imageUriString = data.getStringExtra("imageUriString");
+
             restaurante = new Restaurante(
                     nomeDoRestaurante,
                     notaDoRestaurante,
                     restauranteFavorito,
                     imageUriString
             );
+            Log.e("img",restaurante.getImageUriString());
             switch(requestCode) {
                 case NEW_RESTAURANTE:
                     restaurantes.add(restaurante);
@@ -116,7 +118,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Buscar", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.menu_fav:
-                Toast.makeText(this, "Favoritos", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, FavActivity.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
