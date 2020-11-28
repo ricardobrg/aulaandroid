@@ -43,7 +43,7 @@ public class FavActivity extends AppCompatActivity {
     }
 
     private void setupRestauranteList() {
-        //restaurantes = MainActivity.restaurantes;
+        restaurantes = MainActivity.restaurantes;
         RecyclerView recyclerViewRestaurantes = findViewById(R.id.rv_restaurantes);
         adapter = new RestauranteAdapter(restaurantes, true);
         recyclerViewRestaurantes.setAdapter(adapter);

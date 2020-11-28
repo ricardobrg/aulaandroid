@@ -77,7 +77,6 @@ public class RestauranteAdapter extends
         TextView notaView = holder.restauranteNota;
         notaView.setText(String.valueOf(notaRestaurante));
         ImageView imageView = holder.resturanteImg;
-        Log.e("image",restaurante.getImageUriString());
         //    imageView.setImageURI(Uri.parse(restaurante.getImageUriString()));
         nameView.setOnClickListener(new View.OnClickListener() {
             @Override

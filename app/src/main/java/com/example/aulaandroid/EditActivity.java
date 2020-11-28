@@ -68,7 +68,6 @@ public class EditActivity extends AppCompatActivity {
             notaDoRestaurante = intent.getIntExtra("notaDoRestaurante", 0);
             restauranteFavorito = intent.getBooleanExtra("restauranteFavorito", false);
             imageUriString = intent.getStringExtra("imageUriString");
-            Log.e("imG",imageUriString);
             campoNome.setText(nomeDoRestaurante);
             campoNota.setText(String.valueOf(notaDoRestaurante));
             //if(imageUriString != null)

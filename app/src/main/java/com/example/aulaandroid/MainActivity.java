@@ -32,7 +32,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public ArrayList<Restaurante> restaurantes = new ArrayList<Restaurante>();
+    public static ArrayList<Restaurante> restaurantes = new ArrayList<Restaurante>();
     RestauranteAdapter adapter;
     public static final int NEW_RESTAURANTE = 123;
     public static final int EDIT_RESTAURANTE = 124;
@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
                     restauranteFavorito,
                     imageUriString
             );
-            Log.e("img",restaurante.getImageUriString());
             switch(requestCode) {
                 case NEW_RESTAURANTE:
                     restaurantes.add(restaurante);
