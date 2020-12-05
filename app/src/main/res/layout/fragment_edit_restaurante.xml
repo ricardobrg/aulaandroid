@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context="com.example.myapp2.fragments.EditRestaurante">
+
+        <ImageView
+            android:id="@+id/restaurante_image"
+            android:layout_width="wrap_content"
+            android:layout_height="128dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <EditText
+            android:id="@+id/editNome"
+            android:layout_width="206dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="16sp"
+            android:ems="10"
+            android:hint="Nome do Restaurante"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/restaurante_image" />
+
+
+        <EditText
+            android:id="@+id/editNota"
+            android:layout_width="225dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="16sp"
+            android:ems="10"
+            android:hint="Nota"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editNome" />
+
+        <Button
+            android:id="@+id/fav_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16sp"
+            android:text="Favorito"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editNota" />
+
+        <Button
+            android:id="@+id/saveMensagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16sp"
+            android:text="Salvar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fav_button" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
